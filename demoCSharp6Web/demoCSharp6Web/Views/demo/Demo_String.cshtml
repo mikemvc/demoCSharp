@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Demo_stringConcat";
+}
+
+<h2>Demo 字串相連</h2>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            // 圖片放大
+            $("#img1").click(function () {
+                $('#myModal_img').modal('show');
+            });
+
+            // 結果
+            $("#result").click(function () {
+                $('#myModal_result').modal('show');
+            });
+        });
+    </script>
+}
+
+<h2>Demo2 字串相連</h2>
+
+<h3>介紹：</h3>
+<p>實務上我們在做字串相連的時候，常常會使用到『+=』，或是使用『string.Format()』方法，<br />
+    在C#6.0有了更簡單的使用方式，就是採用『$』以及變數的名稱方式來做串接</p>
+
+<h3>應用情境：</h3>
+<p>
+    e.g. 在自訂的方法或副程式中，有參數傳遞的例外發生(通常是格式錯誤或是忘了傳值)。<br />
+    此時，我們會想要在例外的提示中，明確的告知遺漏的參數為哪一個，來簡化debug的過程
+</p>
+
+<h3>範例：</h3>
+<img id="img1" src="~/Content/Images/demo_1_001.png" width="600" />
+<div id="myModal_img" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-lg" style="width:850px">
+        <div class="modal-content">
+            <div class="modal-body" id="SqlWhoDetails">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="~/Content/Images/demo_1_001.png" width="100%" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<hr />
+<h3 id="result">結果</h3>
+
+<div id="myModal_result" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-lg" style="width:850px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" name="title">執行結果</h4>
+            </div>
+            <div class="modal-body" id="SqlWhoDetails">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="~/Content/Images/demo_1_001.png" width="600" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
